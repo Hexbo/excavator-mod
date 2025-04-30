@@ -1,0 +1,32 @@
+
+name: Build Excavator Mod
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Set execute permission for gradlew
+        run: chmod +x gradlew
+
+      - name: Build the mod
+        run: ./gradlew build
+
+      - name: Upload compiled mod
+        uses: actions/upload-artifact@v3
+        with:
+          name: ExcavatorMod
+          path: build/libs/*.jar

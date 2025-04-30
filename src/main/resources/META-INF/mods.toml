@@ -1,0 +1,9 @@
+
+modLoader="javafml"
+loaderVersion="[2,)"
+license="All rights reserved"
+[[mods]]
+modId="excavatormod"
+version="1.0"
+displayName="Excavator Mod"
+description="Adds a 3x3 mining enchantment"
